@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Raah</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content=" Raah - Ek Mission Website">
+    <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favi.png">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .cs-page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .cs-page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .cs-page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .cs-page-loading.active > .cs-page-loading-inner {
+        opacity: 1;
+      }
+      .cs-page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .cs-page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.cs-page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/lightgallery.js/dist/css/lightgallery.min.css"/>
+    <!-- Vendor Styles-->
+    <!-- FONT AWESOME -->
+<link href="stylesheets/vendors/font-awesome.min.css" rel="stylesheet">
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+    <!-- Page loading spinner-->
+    <div class="cs-page-loading active">
+      <div class="cs-page-loading-inner">
+        <div class="cs-page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="cs-page-wrapper">
+      <!-- Sign In Modal-->
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <div class="cs-view show" id="modal-signin-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign in</h4>
+                <button class="close text-light" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="font-size-ms text-muted">Sign in to your account using email and password provided during registration.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="input-group-overlay form-group">
+                    <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="fe-mail"></i></span></div>
+                    <input class="form-control prepended-form-control" type="email" placeholder="Email" required>
+                  </div>
+                  <div class="input-group-overlay cs-password-toggle form-group">
+                    <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="fe-lock"></i></span></div>
+                    <input class="form-control prepended-form-control" type="password" placeholder="Password" required>
+                    <label class="cs-password-toggle-btn">
+                      <input class="custom-control-input" type="checkbox"><i class="fe-eye cs-password-toggle-indicator"></i><span class="sr-only">Show password</span>
+                    </label>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="keep-signed">
+                      <label class="custom-control-label" for="keep-signed">Keep me signed in</label>
+                    </div><a class="nav-link-style font-size-ms" href="password-recovery.html">Forgot password?</a>
+                  </div>
+                  <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+                  <p class="font-size-sm pt-3 mb-0">Don't have an account? <a href='#' class='font-weight-medium' data-view='#modal-signup-view'>Sign up</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="cs-view" id="modal-signup-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign up</h4>
+                <button class="close text-light" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="font-size-ms text-muted">Registration takes less than a minute but gives you full control over your orders.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Full name" required>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Email" required>
+                  </div>
+                  <div class="cs-password-toggle form-group">
+                    <input class="form-control" type="password" placeholder="Password" required>
+                    <label class="cs-password-toggle-btn">
+                      <input class="custom-control-input" type="checkbox"><i class="fe-eye cs-password-toggle-indicator"></i><span class="sr-only">Show password</span>
+                    </label>
+                  </div>
+                  <div class="cs-password-toggle form-group">
+                    <input class="form-control" type="password" placeholder="Confirm password" required>
+                    <label class="cs-password-toggle-btn">
+                      <input class="custom-control-input" type="checkbox"><i class="fe-eye cs-password-toggle-indicator"></i><span class="sr-only">Show password</span>
+                    </label>
+                  </div>
+                  <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+                  <p class="font-size-sm pt-3 mb-0">Already have an account? <a href='#' class='font-weight-medium' data-view='#modal-signin-view'>Sign in</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="modal-body text-center px-4 pt-2 pb-4">
+              <hr>
+              <p class="font-size-sm font-weight-medium text-heading pt-4">Or sign in with</p><a class="social-btn sb-facebook sb-lg mx-1 mb-2" href="#"><i class="fe-facebook"></i></a><a class="social-btn sb-twitter sb-lg mx-1 mb-2" href="#"><i class="fe-twitter"></i></a><a class="social-btn sb-instagram sb-lg mx-1 mb-2" href="#"><i class="fe-instagram"></i></a><a class="social-btn sb-google sb-lg mx-1 mb-2" href="#"><i class="fe-google"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar Floating light for Index page only-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="cs-header navbar navbar-expand-lg navbar-dark navbar-floating navbar-sticky">
+        <div class="container px-0 px-xl-3">
+          <button class="navbar-toggler ml-n2 mr-2" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4" href="index.html"><img class="navbar-floating-logo d-none d-lg-block" width="153" src="img/raah-logo.png" alt=""/>
+            <img class="navbar-stuck-logo" width=" 55" src="img/raah-logo1.png" alt=""/>
+            <img class="d-lg-none" width="80" src="img/raah-logo.png" alt=""/></a>
+          <!--div class="d-flex align-items-center order-lg-3 ml-lg-auto"><a class="btn btn-primary" href="#" target="_blank" rel="noopener"><i class="title-icon fa fa-user"></i>Donate</a></div -->
+          <div class="cs-offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="cs-offcanvas-cap navbar-box-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button class="close lead" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="cs-offcanvas-body">
+
+              <!-- Menu-->
+              <ul class="navbar-nav">
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#home">Home</a>
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#about">About</a>
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#work">Work</a>
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#impact">Impact</a>
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#get">Get Involved</a>
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#news">News</a>
+  <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#contact">Contact</a>
+
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Intro-->
+      <section id="home" class="d-flex align-items-center position-relative bg-dark bg-size-cover bg-position-center fh-section overflow-hidden pt-6 pb-lg-5" style="background-image: url(img/demo/presentation/intro/bg.jpg);">
+        <div class="container-fluid pt-4 pb-5 py-lg-5">
+          <div class="row align-items-center py-3">
+            <div class="col-xl-6 col-lg-7">
+              <div class="cs-parallax ml-lg-n5" style="max-width: 920px;">
+                <div class="cs-parallax-layer position-relative" data-depth="0.1"><img src="img/demo/presentation/intro/layer01.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" style="z-index: 2;" data-depth="0.3"><img src="img/demo/presentation/intro/layer02.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" data-depth="0.2"><img src="img/demo/presentation/intro/layer03.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" style="z-index: 3;" data-depth="0.1"><img src="img/demo/presentation/intro/layer04.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" data-depth="0.15"><img src="img/demo/presentation/intro/layer05.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" style="z-index: 4;" data-depth="0.25"><img src="img/a/ship.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" data-depth="0.3"><img src="img/a/bb.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" data-depth="0.4"><img src="img/a/dd.png" alt="Layer"/>
+                </div>
+                <div class="cs-parallax-layer" data-depth="0.35"><img src="img/a/cc.png" alt="Layer"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-5 d-flex justify-content-end">
+              <div class="pt-2 mx-auto mb-5 mb-lg-0 ml-lg-0 mr-xl-7 text-center text-lg-left" style="max-width: 495px;">
+                <h1 class="display-4 text-light pb-2"><span class="font-weight-light">Join us at </span> Raah!</h1>
+                <p class="h4 font-weight-light text-light opacity-70 line-height-base">We build strength, stability  and self-reliance through education.</p><a class="d-inline-flex align-items-center text-decoration-none pt-2 mt-4 mb-5" href="#about" data-scroll><span class="btn btn-icon rounded-circle border-light"><i class="fe-arrow-down h4 text-light my-1"></i></span><span class="ml-3 text-light font-weight-medium">Learn More</span></a>
+                <hr class="hr-light mb-5">
+                <div class="row">
+                  <div class="col-sm-4 mb-4 mb-sm-0">
+                    <div class="h1 text-light mb-1">3500+</div>
+                    <div class="h5 text-light font-weight-normal opacity-70 mb-2">Students Impacted</div>
+                  </div>
+                  <div class="col-sm-4 mb-4 mb-sm-0">
+                    <div class="h1 text-light mb-1">500+</div>
+                    <div class="h5 text-light font-weight-normal opacity-70 mb-1">Students Enrolled</div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="h1 text-light mb-1">60,000+</div>
+                    <div class="h5 text-light font-weight-normal opacity-70 mb-1">Minutes Taught Virtually</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features section #2-->
+<section class="container py-5 py-md-6 py-lg-7" id ="about">
+  <div class="row align-items-center pt-3 pt-md-0">
+    <div class="col-md-7"><img class="d-block mx-auto" width="705" src="img/a/aq.png" alt="Features"/>
+    </div>
+    <div class="col-xl-4 col-md-5 offset-xl-1 pt-5 pt-md-0">
+      <h2 class="mb-3 text-center text-md-left">About</h2>
+      <p class="text-center text-md-left">Raah Ek Mission is a charitable trust working towards Child Education and Welfare by providing after school programs, countering school dropouts, conducting donation drives, aiding welfare projects and organizing educational workshops.</p>
+
+        <div class="col-12 pb-1 mb-grid-gutter"><img class="d-block mb-3" width="26" src="img/a/flag.png" alt="Control schedule"/>
+          <h3 class="h6">Mission</h3>
+          <p class="font-size-sm mb-0">Our Mission is focused on educating the under-privileged section, so that they can get this basic right, vital for not just a bright future but overall development of the individual. We firmly grip on this and are speeding up paving the way for the same by educating and providing scholarships.</p>
+        </div>
+        <div class="col-12 pb-1 mb-grid-gutter"><img class="d-block mb-3" width="36" src="img/a/viz.png" alt="Mark tasks"/>
+          <h3 class="h6">Vision</h3>
+          <p class="font-size-sm mb-0">Our vision is to light the lamp of basic education in every house and to support the individuals in their journey of life through free education, scholarships, stationary, etc. We aim to see that rising sun of India where, no one is deprived of basic education, or is suffering to get it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- Work-->
+            <section id="work" class="container py-5 py-md-6 py-lg-7 mb-4 mb-md-0">
+        <h2 class="mb-5 mt-3 mt-md-0 text-center">Our Work</h2>
+            <!-- Article-->
+            <!-- Article-->
+            <div class ="row">
+           <div class="col">
+
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" width = "50" src="img/a/hc.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Health Checkup</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/sd.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1"> Defence Camps</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/mt.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1"> Motivational Talks</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/sp.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1"> Spiritual Health</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/bm.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Bal Mela</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+          </div>
+          <br>
+          <div class ="row">
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/scc.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Summer Camp</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/sx.jpg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Sex Education</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/st.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Story Telling</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/ac.jpg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Aadhar Card Help</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/pd.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Plantation Drives</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+          </div>
+           <br>
+          <div class ="row">
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/dd.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Donation Drives</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/th.jpg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Talent Hunt</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/ed.jpeg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Nature Drives</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+
+
+            <!-- Article-->
+            <div class="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/hc.jpg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Hygiene Camps</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+            <div class ="col">
+              <article class="cs-grid-item" data-groups="[&quot;illustrations&quot;]"><a class="card card-hover h-100 border-0 box-shadow" href="#"><img class="card-img-top" src="img/a/shiv.jpg" alt="Article image"/>
+                  <div class="card-body text-center">
+                    <h3 class="h5 mb-1">Plastic Awareness</h3><span class="font-size-sm text-muted"></span>
+                  </div></a></article>
+            </div>
+          </div>
+      </section>
+      <!-- Testimonials-->
+      <section class="bg-secondary py-5 py-md-6 py-lg-7">
+        <div class="container">
+          <h2 class="text-center mb-5">Testimonials</h2>
+          <div class="row justify-content-center">
+            <div class="col-xl-11">
+              <div class="cs-carousel">
+                <div class="cs-carousel-inner" data-carousel-options="{&quot;mode&quot;: &quot;gallery&quot;, &quot;nav&quot;: false}">
+                  <!-- Item-->
+                  <div>
+                    <div class="pb-3 pb-md-0 pl-md-7 ml-md-3">
+                      <div class="bg-size-cover bg-position-center rounded-lg py-7" style="background-image: url(img/a/ram.jpeg);">
+                        <div class="d-md-flex align-items-center ml-md-n7 text-center text-md-left">
+                          <div class="card card-body d-none d-md-flex py-grid-gutter px-grid-gutter border-0 box-shadow-lg mr-6 cs-scale-up" style="max-width: 28rem;">
+                            <blockquote class="blockquote">
+                              <p>Shipra ji and Raah don't fail to bring joy to the children they teach and engage in educational and recreational activities. Their Baal Mela event is a festival of celebrating education.</p>
+                              <footer class="blockquote-footer">Ramcharan Bohra <br> Member of Parliament, Jaipur</footer>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-md-none mt-n6 px-3 cs-scale-up">
+                        <div class="card card-body py-grid-gutter px-grid-gutter border-0 box-shadow mx-auto" style="max-width: 28rem;">
+                          <blockquote class="blockquote">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <footer class="blockquote-footer">Miguel Sánchez, CEO Company Ltd.</footer>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item-->
+                  <!-- Item-->
+                  <div>
+                    <div class="pb-3 pb-md-0 pl-md-7 ml-md-3">
+                      <div class="bg-size-cover bg-position-center rounded-lg py-7" style="background-image: url(img/a/ak.jpeg);">
+                        <div class="d-md-flex align-items-center ml-md-n7 text-center text-md-left">
+                          <div class="card card-body d-none d-md-flex py-grid-gutter px-grid-gutter border-0 box-shadow-lg mr-6 cs-scale-up" style="max-width: 28rem;">
+                            <blockquote class="blockquote">
+                              <p>Raah has consistently worked with Delhi government schools to increase enrollment and participation of students. We're grateful for all the work they have done for the children of Delhi. </p>
+                              <footer class="blockquote-footer">
+                                Arvind Kejriwal <br>
+                                Chief Minister, Delhi
+                              </footer>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-md-none mt-n6 px-3 cs-scale-up">
+                        <div class="card card-body py-grid-gutter px-grid-gutter border-0 box-shadow mx-auto" style="max-width: 28rem;">
+                          <blockquote class="blockquote">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <footer class="blockquote-footer">Paul Anderson, CEO Company Ltd.</footer>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item-->
+                  <div>
+                    <div class="pb-3 pb-md-0 pl-md-7 ml-md-3">
+                      <div class="bg-size-cover bg-position-center rounded-lg py-7" style="background-image: url(img/a/ss.png);">
+                        <div class="d-md-flex align-items-center ml-md-n7 text-center text-md-left">
+                          <div class="card card-body d-none d-md-flex py-grid-gutter px-grid-gutter border-0 box-shadow-lg mr-6 cs-scale-up" style="max-width: 28rem;">
+                            <blockquote class="blockquote">
+                              <p>I have been involved with Raah and its endeavours since 2015. I have seen the organization grow from a three member team to its current large impact state.
+                              I have closely worked with them to promote their causes in my constituency and look forward to working with them in their upcoming projects. </p>
+                              <footer class="blockquote-footer">Commando Surender Singh <br> MLA – Delhi Cantt</footer>
+                            </blockquote>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="d-md-none mt-n6 px-3 cs-scale-up">
+                        <div class="card card-body py-grid-gutter px-grid-gutter border-0 box-shadow mx-auto" style="max-width: 28rem;">
+                          <blockquote class="blockquote">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <footer class="blockquote-footer">Miguel Sánchez, CEO Company Ltd.</footer>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item-->
+                  <div>
+                    <div class="pb-3 pb-md-0 pl-md-7 ml-md-3">
+                      <div class="bg-size-cover bg-position-center rounded-lg py-7" style="background-image: url(img/a/tal.jpeg);">
+                        <div class="d-md-flex align-items-center ml-md-n7 text-center text-md-left">
+                          <div class="card card-body d-none d-md-flex py-grid-gutter px-grid-gutter border-0 box-shadow-lg mr-6 cs-scale-up" style="max-width: 28rem;">
+                            <blockquote class="blockquote">
+                              <p>Raah's grass root reach to the country's underserved is impressive. Their commitment to educating the underprivileged is admirable. </p>
+                              <footer class="blockquote-footer">Sri Sri Ravi Shankar <br> Indian Spiritual Leader <br> The Art of Living Foundation</footer>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-md-none mt-n6 px-3 cs-scale-up">
+                        <div class="card card-body py-grid-gutter px-grid-gutter border-0 box-shadow mx-auto" style="max-width: 28rem;">
+                          <blockquote class="blockquote">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <footer class="blockquote-footer">Miguel Sánchez, CEO Company Ltd.</footer>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item-->
+                  <div>
+                    <div class="pb-3 pb-md-0 pl-md-7 ml-md-3">
+                      <div class="bg-size-cover bg-position-center rounded-lg py-7" style="background-image: url(img/a/rvr.png);">
+                        <div class="d-md-flex align-items-center ml-md-n7 text-center text-md-left">
+                          <div class="card card-body d-none d-md-flex py-grid-gutter px-grid-gutter border-0 box-shadow-lg mr-6 cs-scale-up" style="max-width: 28rem;">
+                            <blockquote class="blockquote">
+                              <p>Raah worked relentlessly in times of crisis during the corona lockdown. They helped provide meals and travel assistance to over 100+ migrant families.
+                              I look forward to working with them in Rajasthan. I wish them the best!</p>
+                              <footer class="blockquote-footer">Rajyavardhan Singh Rathore <br> Member of Parliament <br> Olympic Medllaist <br> </footer>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-md-none mt-n6 px-3 cs-scale-up">
+                        <div class="card card-body py-grid-gutter px-grid-gutter border-0 box-shadow mx-auto" style="max-width: 28rem;">
+                          <blockquote class="blockquote">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            <footer class="blockquote-footer">Miguel Sánchez, CEO Company Ltd.</footer>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Clients (carousel)-->
+      <section class="bg-secondary py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 col-md-4 col-6"></div>
+            <div class="col-lg-2 col-md-4 col-6"><a class="cs-swap-image" href="#"><img class="cs-swap-to" width="120" src="img/a/ndm.png" alt="Logo"/><img class="cs-swap-from" width="120" src="img/a/ndm.png" alt="Logo"/></a></div>
+            <div class="col-lg-2 col-md-4 col-6"><a class="cs-swap-image" href="#"><img class="cs-swap-to" width="180" src="img/a/im.png" alt="Logo"/><img class="cs-swap-from" width="180" src="img/a/im.png" alt="Logo"/></a></div>
+            <div class="col-lg-2 col-md-4 col-6"><a class="cs-swap-image" href="#"><img class="cs-swap-to" width="120" src="img/a/mp.png" alt="Logo"/><img class="cs-swap-from" width="120" src="img/a/mp.png" alt="Logo"/></a></div>
+            <div class="col-lg-2 col-md-4 col-6"><a class="cs-swap-image" href="#"><img class="cs-swap-to" width="100" src="img/a/ep.jpg" alt="Logo"/><img class="cs-swap-from" width="100" src="img/a/ep.jpg" alt="Logo"/></a></div>
+            <div class="col-lg-2 col-md-4 col-6"><a class="cs-swap-image" href="#"><img class="cs-swap-to" width="100" src="img/a/abk.jpg" alt="Logo"/><img class="cs-swap-from" width="100" src="img/a/abk.jpg" alt="Logo"/></a></div>
+            </div>
+        </div>
+      </section>
+      <!-- Numbers -->
+      <section id="impact" class="container mt-4 pt-5 mt-md-2 pt-md-7 pb-6">
+        <h2 class="text-center mb-3">Impact</h2>
+
+        <div class="cs-carousel">
+          <div class="cs-carousel-inner" data-carousel-options="{&quot;items&quot;: 5, &quot;controls&quot;: false, &quot;gutter&quot;: 15, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:2}, &quot;410&quot;:{&quot;items&quot;:3}, &quot;580&quot;:{&quot;items&quot;:4}, &quot;740&quot;:{&quot;items&quot;:5}}}">
+            <div class="text-center"><img class="mb-3" width="54" src="img/demo/coworking/icons/stat.png" alt="Total Area"/>
+              <div class="text-muted" style="font-size: 2.25rem;">10,000+</div>
+              <h3 class="h5">Stationery Distributed</h3>
+            </div>
+            <div class="text-center"><img class="mb-3" width="54" src="img/demo/coworking/icons/comp.png" alt="Showers"/>
+              <div class="text-muted" style="font-size: 2.25rem;">60,000+</div>
+              <h3 class="h5">Minutes Taught Online</h3>
+            </div>
+            <div class="text-center"><img class="mb-3" width="54" src="img/demo/coworking/icons/read.png" alt="24/7 Access"/>
+              <div class="text-muted" style="font-size: 2.25rem;">3500+</div>
+              <h3 class="h5">Inducted to Reading</h3>
+            </div>
+            <div class="text-center"><img class="mb-3" width="54" src="img/demo/coworking/icons/tree.png" alt="3 Full Floors"/>
+              <div class="text-muted" style="font-size: 2.25rem;">3000+</div>
+              <h3 class="h5">Trees Planted
+              </h3>
+            </div>
+            <div class="text-center"><img class="mb-3" width="54" src="img/demo/coworking/icons/sch.png" alt="Parking"/>
+              <div class="text-muted" style="font-size: 2.25rem;">25</div>
+              <h3 class="h5">Annual Scholarship Grants</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials-->
+      <section class="bg-faded-primary position-relative py-md-7 py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-7 order-md-1 order-2">
+              <!-- Carousel-->
+              <div class="cs-carousel">
+                <div class="cs-carousel-inner" data-carousel-options="{&quot;gutter&quot;: 20, &quot;responsive&quot;: {&quot;0&quot;: {&quot;nav&quot;: true, &quot;controls&quot;: false}, &quot;991&quot;: {&quot;nav&quot;: false, &quot;controls&quot;: true}}}">
+                  <!-- 1.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>I remember the day when  I met Mrs Shipra Kulshrestha, it was a very beautiful meeting with an extremely amiable and lovely person. She introduced me to her initiative Raah-Ek Mission and it  filled my heart with excitement that she wanted me to be a part of it. I was very new to this concept but with Shipra at the helm we nurtured  this little plant and tried to give the best to the needy especially the little children,  as our main aim  was to educate the youth. With proper framework, dedication of its members and extraordinary effort by the leader, Ms. Shipra, Raah-Ek mission has come a long way. My only wish is that it may keep progressing day by day year by year providing the best to  the one who need the  most
+Congratulations, RAAH-EK MISSION
+.</p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Ms. Shilpa Singh, Volunteer </div>
+                    </footer>
+                  </blockquote>
+                  <!-- 2.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>When Shipra contacted me with a noble vision in her mind, I immediately said yes. For I had the opportunity and experience of teaching the EWS kids for almost 7 years and I found it very gratifying . I had such a wonderful experience connecting with the kids. The kids have been very fast learner’s . We were a bunch of dedicated volunteers.
+</p><p>Shipra Kulshrestha has been very  hardworking and dedicated throughout giving  her 200% to the cause of educating the kids and bringing a smile on the kids face. ‘Raah -ek- Mission deserves a lot of appreciation and applause.
+May all the  Raah kids have a blessed,happy and bright future.
+My very best wishes to the Raah team and the founder Shipra Kulshrestha!
+</p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Ms. Anupma Shukla, Volunteer</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 3.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>I came to be associated with RAAH- Ek Mission through  Mrs.Shipra Kulshreshtha during my stay at Chanakyapuri in New Delhi.
+She started a socio welfare mission called 'RAAH'. Shipra along with a few ladies, who were all residents of Chanakyapuri and took on the responsibility of teaching the slum children. As I was always  interested in the activity of teaching and moreover wanting to do something for the deprived children I willingly joined this mission. It gave me a sense of purpose and pride. My association RAAH-Ek Mission will always be some of my fondest everlasting memories.
+</p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Ms. Padmini, Volunteer</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 4.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>It was really an enriching experience to work with RAAH-Ek Mission which started with educating the children of migrant labour and assumed a huge proportion in terms of growth. I wish all good luck to its founder Ms. Shipra under whose leadership it has created a niche for itself.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Ms. Mamta Shukla, Volunteer</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 5.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>Working with RAAH has been great! I taught English to Grade IV students. They were extremely curious and eager to learn. As teaching is a reciprocal process, I learnt a lot on the job as well. I also feel my interaction with the organisation has helped me grow as an individual. I truly appreciate this initiative as it gave me a platform to bring about some change in society; societal structures are not equal and hence they are not equally rewarding, and therefore I'm grateful that I got the opportunity to give back to people.</p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Ms. Snigdha Srinivas, Volunteer</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 6.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>Raah - Ek mission provided me with this great opportunity of teaching underprivileged students online. I taught EVS and had the most amazing students. I always consider Education as the most powerful tool an individual can possess, and when I got the opportunity of passing it to the future generation I considered myself lucky that in some way I am able to contribute to the future of this country. These kids need help and RAAH-Ek Mission  is providing them everything it can at it's best. I feel happy being part of such a great organisation and can never thank them enough but would still say a massive THANK YOU to Shipra Ma'am, Vivek Sir and Tanisha for giving me this chance.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Namrata Rajani, Volunteer</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 7.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>I joined RAAH in July and since then it has become a part of my life. The opportunity it has provided me to serve people who need our help in these testing times is immense. Throughout my journey I have made many new relations and memories for which I am very grateful. The children I am teaching have now become a part of my family and this bond is what I'll cherish forever.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Harshita Sawhney, Volunteer</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 8.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>I would like to thank RAAH-Ek Mission for providing online NCERT classes during the Pandemic which are backed up by some amazing teachers, who are helping us in studies and clearing our doubts regularly.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Ishika Gupta, Student </div>
+                    </footer>
+                  </blockquote>
+                  <!-- 9.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>RAAH-EK Mission provided us online classes during the Pandemic when our school classes were OFF. Only because of their intelligent teacher on board I can now understand Science and Maths very well. I really wish these classes continue in the coming years as well.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Harshit Sagar, Student </div>
+                    </footer>
+                  </blockquote>
+                  <!-- 10.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>Amidst the Pandemic everything was paused except our studies and that was only possible because we were tightly backed up by the classes provided to us by RAAH-Ek Mission. I would like to thank the entire team of RAAH for providing these classes and being a blessing to us during hard times.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Suhani, Student</div>
+                    </footer>
+                  </blockquote>
+                  <!-- 11.Carousel item-->
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>I would like to thank RAAH-Ek Mission for establishing this online platform during the Pandemic where we are able to study soo well where there are many students who are not able to study well due to many obstacles but RAAH-Ek Mission is helping them by being a blessing to them. I really like these classes, especially the teachers are very supportive and friendly due to which I’m able to clear all my concepts.
+                    </p>
+                    <footer class="media align-items-center">
+                      <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Gopal, Student</div>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 offset-lg-1 order-md-2 order-1 mb-md-0 mb-grid-gutter"><img class="d-block mx-md-0 mx-auto" src="img/demo/personal-portfolio/testimonials/illustration.svg" alt="Illustration"/>
+            </div>
+          </div>
+        </div>
+        <div class="cs-shape cs-shape-bottom cs-shape-curve bg-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+          </svg>
+        </div>
+      </section>
+      <!-- Involved-->
+      <section id="get" class="container py-5 py-md-6 py-lg-7">
+        <div class="row align-items-center mt-3 mt-md-0">
+          <div class="col-lg-4 col-md-5 order-md-2 text-center text-md-left mb-5 mb-md-0">
+            <h2 class="mb-3">Get Involved</h2>
+            <p class="text-muted mb-4 pb-2">We have multiple avenues for you to get involved.
+            We are looking for committed individuals to help us provide the underserved quality education.
+            Apply to volunteer today or get in touch to donate!</p><a class="btn btn-primary" href="#">Apply</a>
+          </div>
+          <div class="col-lg-8 col-md-7 order-md-1 bg-position-left-bottom bg-no-repeat" style="background-image: url(img/demo/marketing-seo/services/bg-shape.svg);">
+            <div class="mx-auto mx-md-0 ml-xl-7" style="max-width: 600px;">
+              <div class="row align-items-center">
+                <div class="col-sm-6">
+                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/marketing-seo/services/01.svg" alt="Icon"/>
+                    <h3 class="h5 mb-2">Volunteer</h3>
+                    <p class="font-size-sm"> Volunteer to help mentor our students, administer, manage logistics and scale our operations.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/marketing-seo/services/02.svg" alt="Icon"/>
+                    <h3 class="h5 mb-2">Donate</h3>
+                    <p class="font-size-sm"> Donate to help us scale our impact</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mx-auto mx-md-0" style="max-width: 600px;">
+              <div class="row align-items-center">
+                <div class="col-sm-6">
+                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/marketing-seo/services/03.svg" alt="Icon"/>
+                    <h3 class="h5 mb-2">CSR</h3>
+                    <p class="font-size-sm"> A corporate looking to make the best of their CSR funds? <br>Get in touch. </p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bg-light box-shadow-lg rounded-lg p-4 mb-grid-gutter text-center text-sm-left"><img class="d-inline-block mb-4 mt-2" width="100" src="img/demo/marketing-seo/services/04.svg" alt="Icon"/>
+                    <h3 class="h5 mb-2">Contribute Material</h3>
+                    <p class="font-size-sm"> Contribute materials to ease education of the under served.<br> We accept books, clothes, bags and stationary.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- News-->
+      <div class="position-relative bg-gradient" style="height: 420px;">
+        <div class="cs-shape cs-shape-bottom cs-shape-curve bg-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+          </svg>
+        </div>
+      </div>
+      <section id="news" class="container bg-overlay-content pt-5 pt-md-6" style="margin-top: -420px;">
+        <h2 class="text-light text-center pt-3 pt-md-2 mb-5">News</h2>
+        <div class="cs-carousel">
+          <div class="cs-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;controls&quot;: false, &quot;autoHeight&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1, &quot;gutter&quot;: 16},&quot;500&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 16},&quot;850&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 16}, &quot;1100&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 23}}}">
+            <!-- Article-->
+            <div class="pb-2">
+              <article class="card card-hover h-100 border-0 box-shadow pt-4 pb-5 mx-1">
+                <div class="card-body pt-5 px-4 px-xl-5"><a class="meta-link font-size-sm mb-2" href="#"></a>
+                  <h3 class="h4 nav-heading mb-4"><a target="blank" href="https://www.youtube.com/watch?v=isYuIQ_AgUY">Anti-plastic campaign organized by Raah Ek Mission</a></h3>
+                </div>
+                <div class="px-4 px-xl-5 pt-2"><a class="media meta-link font-size-sm align-items-center" href="#"><img class="rounded-circle" width="42" src="img/testimonials/nn.png" alt="Charlie Welch"/>
+                    <div class="media-body pl-2 ml-1 mt-n1"><span class="font-weight-semibold ml-1">News Nation</span></div></a>
+                  <div class="mt-3 text-right text-nowrap"><a class="meta-link font-size-xs" href="#"></a></div>
+                </div>
+              </article>
+            </div>
+            <!-- Article-->
+            <div class="pb-2">
+              <article class="card card-hover h-100 border-0 box-shadow pt-4 pb-5 mx-1">
+                <div class="card-body pt-5 px-4 px-xl-5"><a class="meta-link font-size-sm mb-2" href="#"></a>
+                  <h3 class="h4 nav-heading mb-4"><a target="blank" href="https://zeenews.india.com/hindi/videos/fair-for-children-of-slum-dwellers/385507">Raah organizes a fair for underprivileged children</a></h3>
+                </div>
+                <div class="px-4 px-xl-5 pt-2"><a class="media meta-link font-size-sm align-items-center" href="#"><img class="rounded-circle" width="42" src="img/testimonials/z.jpeg" alt="Sanomi Smith"/>
+                    <div class="media-body pl-2 ml-1 mt-n1"><span class="font-weight-semibold ml-1">Zee News</span></div></a>
+                  <div class="mt-3 text-right text-nowrap"><a class="meta-link font-size-xs" href="#">&nbsp;</a></div>
+                </div>
+              </article>
+            </div>
+            <!-- Article-->
+            <div class="pb-2">
+              <article class="card card-hover h-100 border-0 box-shadow pt-4 pb-5 mx-1">
+                <div class="card-body pt-5 px-4 px-xl-5"><a class="meta-link font-size-sm mb-2" href="#"> </a>
+                  <h3 class="h4 nav-heading mb-4"><a target="blank" href="https://www.indiaincharge.com/Interview-of-raah-ek-mission-founder-shipra-kulshreshtha">Countering school dropout rates in government schools of Delhi</a></h3>
+                </div>
+                <div class="px-4 px-xl-5 pt-2"><a class="media meta-link font-size-sm align-items-center" href="#"><img class="rounded-circle" width="42" src="img/testimonials/indiancharge.jpeg" alt="Tim Brooks"/>
+                    <div class="media-body pl-2 ml-1 mt-n1"><span class="font-weight-semibold ml-1">Indiaincharge</span></div></a>
+                  <div class="mt-3 text-right text-nowrap"><a class="meta-link font-size-xs" href="#"></a></div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Article-->
+            <div class="pb-2">
+              <article class="card card-hover h-100 border-0 box-shadow pt-4 pb-5 mx-1">
+                <div class="card-body pt-5 px-4 px-xl-5"><a class="meta-link font-size-sm mb-2" href="#"> </a>
+                  <h3 class="h4 nav-heading mb-4"><a target="blank" href="https://www.youtube.com/watch?v=isYuIQ_AgUY">Baal Chetna Shiver Organized by Raah</a></h3>
+                </div>
+                <div class="px-4 px-xl-5 pt-2"><a class="media meta-link font-size-sm align-items-center" href="#"><img class="rounded-circle" width="42" src="img/testimonials/ep.jpeg" alt="Sarah Palson"/>
+                    <div class="media-body pl-2 ml-1 mt-n1"><span class="font-weight-semibold ml-1">Express News India</span></div></a>
+                  <div class="mt-3 text-right text-nowrap"><a class="meta-link font-size-xs" href="#"></a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <br>
+      </section>
+      <div class="bg-secondary" style="margin-top: -300px; padding-top: 300px;"></div>
+      <!-- Instagram-->
+<section class="container-fluid py-5 my-4 my-sm-0 pt-sm-6 pt-md-7">
+  <h2 class="mb-5 text-center">Follow <a  target="_blank" href='https://www.instagram.com/raahekmission/' class='d-inline-block p-2 bg-faded-primary rounded text-primary text-decoration-0'>@raahekmission</a> on Instagram</h2>
+  <!-- Carousel-->
+  <div class="cs-carousel">
+    <div class="cs-carousel-inner" data-carousel-options="{&quot;navAsThumbnails&quot;: true, &quot;controls&quot;: false, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 15}, &quot;576&quot;:{&quot;items&quot;:3}, &quot;768&quot;:{&quot;items&quot;:4, &quot;gutter&quot;: 30}, &quot;992&quot;:{&quot;items&quot;:5}, &quot;1200&quot;:{&quot;items&quot;:6}}}">
+      <!-- Carousel item-->
+      <div><img src="img/a/rer.jpg" alt="01"/>
+      </div>
+      <!-- Carousel item-->
+      <div><img src="img/a/22.jpg" alt="02"/>
+      </div>
+      <!-- Carousel item-->
+      <div><img src="img/a/33.jpg" alt="03"/>
+      </div>
+      <!-- Carousel item-->
+      <div><img src="img/a/mds.jpg" alt="04"/>
+      </div>
+      <!-- Carousel item-->
+      <div><img src="img/a/rr.jpg" alt="05"/>
+      </div>
+      <!-- Carousel item-->
+      <div><img src="img/a/ooo.jpg" alt="06"/>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="border-top" id="contact">
+  <div class="row no-gutters cs-gallery"><a class="col-lg-6 cs-gallery-item cs-map-popup d-flex flex-columnt justify-content-center align-items-center bg-position-center bg-size-cover py-7 text-center" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.48129329286!2d77.0689000735943!3d28.527280344289526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1611894230552!5m2!1sen!2sin" data-iframe="true" data-sub-html="&lt;h6 class=&quot;font-size-sm text-light&quot;&gt;" style="background-image:url(img/pages/contacts/map02.jpg);"><span class="cs-gallery-caption"><i class="fe-maximize-2 font-size-xl mt-n1 mr-2"></i>Expand the map</span>
+      <div class="d-inline-block py-4 py-md-6">
+      </div></a>
+    <div class="col-lg-6 px-3 px-lg-5">
+      <div class="pt-5 pb-6 pt-md-6 mx-auto" style="max-width: 720px;">
+        <h2 class="h3 pb-4">Contact Us</h2>
+        <form class="needs-validation row" novalidate>
+          <div class="col-sm-6 form-group">
+            <label class="form-label" for="cont-fn">Full name<sup class="text-danger ml-1">*</sup></label>
+            <input class="form-control" type="text" id="cont-fn" placeholder=" " required>
+            <div class="invalid-feedback">Please enter your full name!</div>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label class="form-label" for="cont-email">Email address<sup class="text-danger ml-1">*</sup></label>
+            <input class="form-control" type="email" id="cont-email" placeholder=" " required>
+            <div class="invalid-feedback">Please enter a valid email address!</div>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label class="form-label" for="cont-phone">Phone number</label>
+            <input class="form-control bg-image-0" type="text" id="cont-phone" data-format="custom" data-delimiter="-" data-blocks="2 4 2 2" placeholder=" ">
+          </div>
+          <div class="col-sm-6 form-group">
+            <label class="form-label" for="cont-subject">Subject</label>
+            <input class="form-control bg-image-0" type="text" id="cont-subject" placeholder=" ">
+          </div>
+          <div class="col-12 form-group">
+            <label class="form-label" for="cont-message">Message<sup class="text-danger ml-1">*</sup></label>
+            <textarea class="form-control" id="cont-message" rows="4" placeholder="" required></textarea>
+            <div class="invalid-feedback">Please write a message!</div>
+          </div>
+          <div class="col-sm-6">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </div>
+          <div class="col-sm-6">
+            <h5>Collaboration</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-0">+ 91 9599934711</li>
+              <li class="mb-0">+ 91 7014732331</li>
+              <li class="mb-0">team@raahekmission.com</li>
+            </ul>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="cs-footer bg-dark pt-5 pb-4">
+      <div class="container pb-2 text-center text-md-left">
+        <div class="row pt-md-2 pb-3">
+          <div class="col-lg-3 col-md-4 pb-4"><a class="d-inline-block mb-3" href="index.html" style="width: 80px;"><img src="img/rf.png" alt="Around"/></a>
+            <p class="font-size-sm text-light opacity-50 mb-0">Join us in our endeavors at Raah</p>
+          </div>
+          <div class="col-md-5 pt-2 pb-4">
+            <div class="cs-widget cs-widget-light">
+              <h4 class="cs-widget-title mb-3">Support</h4>
+              <div class="d-lg-flex">
+                <ul class="mr-lg-5">
+                  <li><a class="cs-widget-link" href="mailto:support@example.com"><i class="fe-mail font-size-lg mr-2"></i>team@raahekmission.com
+</a></li>
+                </ul>
+                <ul>
+                  <li><a class="cs-widget-link" href="tel:9107848015"><i class="fe-phone font-size-lg mr-2"></i>9599934711</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 pt-2 pb-4">
+            <div class="cs-widget cs-widget-light">
+              <h4 class="cs-widget-title mb-3">Follow</h4><a class="social-btn sb-outline sb-light sb-facebook sb-lg mr-2 mb-2" target="_blank" href="https://www.facebook.com/raah1mission"><i class="fe-facebook"></i></a>
+              <a class="social-btn sb-outline sb-light sb-twitter sb-lg mr-2 mb-2" target="_blank" href="https://twitter.com/raah_ek"><i class="fe-twitter"></i></a><a class="social-btn sb-outline sb-light sb-instagram sb-lg mr-2 mb-2" target="_blank" href="https://www.instagram.com/raahekmission/">
+                <i class="fe-instagram"></i></a><a class="social-btn sb-outline sb-light sb-google sb-lg mb-2" target="_blank" href="https://www.google.com/search?q=raah+ek+mission&oq=raah+ek+mission&aqs=chrome..69i57j35i39j69i60l3.4487j0j4&sourceid=chrome&ie=UTF-8"><i class="fe-google"></i></a>
+            </div>
+          </div>
+        </div>
+        <p class="font-size-sm text-center mb-0"><span class="text-light opacity-50">© All rights reserved. 2021. </p>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon fe-arrow-up">   </i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/jquery/dist/jquery.slim.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="vendor/jquery/dist/jquery.slim.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="vendor/lg-video.js/dist/lg-video.min.js"></script>
+    <script src="vendor/parallax-js/dist/parallax.min.js"></script>
+
+    <script src="vendor/jquery/dist/jquery.slim.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="vendor/cleave.js/dist/cleave.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+  </body>
+
+
+</html>
